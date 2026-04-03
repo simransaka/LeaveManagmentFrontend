@@ -1,0 +1,71 @@
+<app-admin-navbar></app-admin-navbar>
+
+<!-- Loading -->
+<div *ngIf="loading" class="loading-box">
+    Loading all employees...
+</div>
+
+<!-- Error -->
+<div *ngIf="!loading && error" class="error-box">
+    {{ error }}
+</div>
+
+<!-- Success -->
+<div *ngIf="successMessage" class="success-box">
+    {{ successMessage }}
+</div>
+
+<div *ngIf="!loading && !error">
+<button class="m-4 my-[70px] py-3 px-2.5 border-none rounded-2xl bg-[#4a90e2] text-white font-semibold cursor-pointer" (click)="toggleForm()">+ Add Employee</button>
+
+<div class="fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.5)] flex justify-center items-center z-[1000]" *ngIf="showForm">
+
+    <div class="w-[400px] m-8 p-6 bg-white rounded-2xl shadow-lg">
+        <span class="relative top-0 left-[320px] text-[20px] font-bold text-red-500 cursor-pointer z-[10] hover:scale-[1.2] transition duration-200" (click)="toggleForm()">✖</span>
+
+        <h2 class="text-center mb-3 text-[#1f2937]">ADD EMPLOYEE</h2>
+
+        <form class="flex flex-col gap-[10px]" [formGroup]="employeeForm" (ngSubmit)="onSubmit(employeeForm)">
+
+            <label class="form-label" for="userName">Enter new Employee Name</label>
+            <input class="form-input" type="text" id="userName" formControlName="userName" required>
+
+            <label class="form-label" for="department">Enter Employee Department</label>
+            <input class="form-input" type="text" id="department" formControlName="department" required>
+
+            <label class="form-label" for="jobRole">Enter Employee Job Role</label>
+            <input class="form-input" type="text" id="jobRole" formControlName="jobRole" required>
+
+            <label class="form-label" for="emailId">Enter Email Id</label>
+            <input class="form-input" type="text" id="emailId" formControlName="emailId" required>
+
+            <label class="form-label" for="password">Enter Temporary Password</label>
+            <input class="form-input" type="password" id="password" formControlName="password" required>
+
+            <button class="mt-2.5 p-2 border-none rounded-lg bg-[#4a90e2] text-white font-semibold cursor-pointer trans duration-300 hover:bg-[#357abd] -translate-y-[-2px]" type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<table class="w-[95%] mx-auto border-collapse bg-white rounded-xl overflow-hidden shadow-lg">
+    <thead class="bg-gradient-to-r from-[#4a90e2] to-[#357abd] text-white">
+        <tr>
+            <th>Employee ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Job Role</th>
+            <th>Email ID</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let employee of employees" class="hover:bg-[#edf4ff]">
+            <td>{{employee.employeeId}}</td>
+            <td>{{employee.employeeName}}</td>
+            <td>{{employee.department}}</td>
+            <td>{{employee.jobRole}}</td>
+            <td>{{employee.emailId}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>

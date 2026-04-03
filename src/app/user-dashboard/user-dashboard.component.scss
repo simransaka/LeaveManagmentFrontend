@@ -1,0 +1,11 @@
+span{
+  @apply text-[13px] text-[#7b8a8b] mb-1;
+}
+
+strong{
+  @apply text-[16px] text-[#2d3436] font-semibold;
+}
+
+.info{
+  @apply bg-[#f9fafb] p-3 rounded-xl flex flex-col transition duration-200 hover:bg-[#f1f3f5];
+}

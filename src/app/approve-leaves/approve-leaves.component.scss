@@ -1,0 +1,11 @@
+th {
+  @apply bg-[#4a90e2] text-[white] p-2;
+}
+
+td {
+  @apply p-2 text-center;
+}
+
+form {
+  @apply flex flex-col items-center gap-[9px];
+}

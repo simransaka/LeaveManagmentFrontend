@@ -1,0 +1,21 @@
+li{
+  @apply inline;
+}
+
+a{
+  @apply text-white text-[15px] no-underline cursor-pointer transition duration-300 hover:text-[#1abc9c];
+}
+
+.bar{
+  @apply block h-1 bg-white rounded;
+}
+
+.sideBar{
+  @apply text-white text-[16px] ml-2 no-underline cursor-pointer transition duration-300 hover:text-[#1abc9c];
+}
+
+
+/* Show sidebar */
+.sidebar.show {
+  @apply transform -translate-x-0;
+}

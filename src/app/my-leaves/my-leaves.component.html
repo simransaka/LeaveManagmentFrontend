@@ -1,0 +1,84 @@
+<app-user-navbar></app-user-navbar>
+
+<div *ngIf="loading" class="loading-box">
+    Loading leave requests...
+</div>
+<div *ngIf="!loading && !error">
+    <div class="w-full mx-auto my-[70px]">
+        <h3 class="mb-2.5 ml-6 text-gray-800 font-semibold">Pending Leave Requests</h3>
+
+        <table class="leave-table">
+            <thead>
+                <th>Leave Request ID</th>
+                <th>Leave Type</th>
+                <th>Total Days Of Leave</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Reason</th>
+                <th>Applied Date</th>
+                <th>Status</th>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let request of pendingRequests">
+                    <td>{{request.leaveRequestId}}</td>
+                    <td>{{request.leaveType}}</td>
+                    <td>{{request.totalDaysOfLeave}}</td>
+                    <td>{{request.startDate}}</td>
+                    <td>{{request.endDate}}</td>
+                    <td>{{request.reason}}</td>
+                    <td>{{request.appliedDate}}</td>
+                    <td [ngClass]="{
+                            'approved': request.status === 'approved',
+                            'rejected': request.status === 'rejected',
+                            'pending': request.status === 'pending'
+                        }" class="font-semibold">
+                        {{request.status | uppercase }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="w-full mx-auto my-[30px]">
+        <h3 class="mb-2.5 ml-6 text-gray-800 font-semibold">Processed Leave Requests (Approved / Rejected)</h3>
+
+        <table class="leave-table">
+            <thead>
+                <th>Leave Request ID</th>
+                <th>Leave Type</th>
+                <th>Total Days Of Leave</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Reason</th>
+                <th>Applied Date</th>
+                <th>Status</th>
+                <th>Approved By</th>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let request of processedRequests">
+                    <td>{{request.leaveRequestId}}</td>
+                    <td>{{request.leaveType}}</td>
+                    <td>{{request.totalDaysOfLeave}}</td>
+                    <td>{{request.startDate}}</td>
+                    <td>{{request.endDate}}</td>
+                    <td>{{request.reason}}</td>
+                    <td>{{request.appliedDate}}</td>
+                    <td [ngClass]="{
+                            'approved': request.status === 'approved',
+                            'rejected': request.status === 'rejected',
+                            'pending': request.status === 'pending'
+                        }" class="font-semibold">
+                        {{request.status | uppercase }}
+                    </td>
+                    <td>{{request.approvedBy}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div *ngIf="error" class="error-box">
+    {{ error }}
+</div>

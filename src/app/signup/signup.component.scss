@@ -1,0 +1,21 @@
+/* Labels */
+label {
+  @apply mb-2 font-medium;
+}
+
+/* Inputs */
+input {
+  @apply p-3 rounded border border-[#ccc] transition duration-300;
+  
+  &:focus{
+    @apply border-[#007bff] outline-none;
+  }
+}
+
+li {
+    @apply inline;
+}
+
+a {
+    @apply text-white text-[15px] no-underline cursor-pointer transition duration-300 hover:text-[#1abc9c];
+}

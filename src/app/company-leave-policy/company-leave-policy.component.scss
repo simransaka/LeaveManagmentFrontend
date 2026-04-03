@@ -1,0 +1,15 @@
+.policy-card {
+  @apply bg-[#ffffff] p-5 mb-[20px] rounded-2xl shadow-[0_6px_16px_rgba(0,0,0,0.08)] transition duration-300;
+
+  h2{
+    @apply mb-3 text-[#4a90e2];
+  }
+
+  ul{
+    @apply pl-[20px];
+  }
+
+  li{
+    @apply mb-2 text-[#555];
+  }
+}

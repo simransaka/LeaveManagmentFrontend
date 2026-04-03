@@ -1,0 +1,28 @@
+.leave-card {
+  @apply w-[260px] bg-white p-5 rounded-xl shadow-lg shadow-blue-200 transition-all duration-300 hover:-translate-y-1;
+
+  &:h3{
+    @apply mb-4 text-blue-100;
+  }
+}
+
+.leave-item {
+  @apply flex justify-between my-2.5 p-2 bg-gray-50 rounded-lg;
+
+  &:span{
+    @apply text-gray-500;
+  }
+
+  &:strong{
+    @apply font-semibold;
+  }
+}
+
+.positive {
+  @apply text-green-500 font-semibold;
+}
+
+.negative {
+  @apply text-red-500 font-semibold;
+}
+

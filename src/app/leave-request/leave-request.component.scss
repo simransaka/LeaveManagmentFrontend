@@ -1,0 +1,14 @@
+
+/* Labels */
+.form-label {
+  @apply mt-3 mt-1 text-[13px] text-[#6c757d];
+}
+
+/* Inputs */
+.form-input {
+  @apply p-3 rounded-lg border border-[#dcdfe3] text-[14px] transition duration-300;
+  
+  &:focus{
+    @apply border-[#4a90e2] bg-[#ffffff] outline-none;
+  }
+}

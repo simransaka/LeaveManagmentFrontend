@@ -1,0 +1,28 @@
+<nav class="fixed top-0 left-0 bg-[#2c3e50] py-2 px-4 w-full h-[60px] flex flex-col">
+    <!--hamburger menu bar-->
+    <div>
+        <button class="hamburger flex flex-col justify-between w-6 h-5 my-1 cursor-pointer transition-all duration-300"
+            [class.active]="sideBarOpen" (click)="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+    <div>
+        <ul class="list-none flex justify-end gap-7 m-0 p-0 text-white">
+            <li><a (click)="myProfile()">My Profile</a></li>
+            <li><a (click)="goHome()">Home</a></li>
+            <li><a (click)="logOut()">Log Out</a></li>
+        </ul>
+    </div>
+
+</nav>
+
+<nav [class.show]="sideBarOpen"
+    class="sidebar fixed top-14 left-0 h-full w-[170px] bg-[#2c3e50] text-white flex flex-col gap-3 pt-5 transition-all duration-300"
+    [ngClass]="sideBarOpen ? 'translate-x-0' : '-translate-x-full'">
+
+    <li><a class="sideBar" (click)="checkEmployees()">Manage Employees</a></li>
+    <li><a class="sideBar" (click)="checkRequests()">View Leave Requests</a></li>
+
+</nav>

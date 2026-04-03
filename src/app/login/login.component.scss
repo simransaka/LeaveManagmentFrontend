@@ -1,0 +1,16 @@
+input {
+  @apply p-2.5 rounded-md border border-gray-300;
+
+
+  &:focus {
+    @apply border-blue-500 outline-none;
+  }
+}
+
+li {
+    @apply inline;
+}
+
+a {
+    @apply text-white text-[15px] no-underline cursor-pointer transition duration-300 hover:text-[#1abc9c];
+}

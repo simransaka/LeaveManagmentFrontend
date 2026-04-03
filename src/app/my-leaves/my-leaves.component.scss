@@ -1,0 +1,32 @@
+.leave-table {
+  @apply w-[95%] mx-auto my-[30px] border-collapse bg-white rounded-xl overflow-hidden shadow-lg;
+}
+
+.leave-table thead {
+  @apply bg-blue-400 text-white;
+}
+
+th {
+  @apply p-3 font-medium text-center;
+}
+
+td {
+  @apply p-2.5 text-center;
+}
+
+tr {
+  @apply border-b border-gray-200 even:bg-[#f1f3f5];
+}
+
+.approved {
+  @apply text-green-500 font-semibold;
+}
+
+.rejected {
+  @apply text-red-500 font-semibold;
+}
+
+.pending {
+  @apply text-yellow-500 font-semibold;
+}
+

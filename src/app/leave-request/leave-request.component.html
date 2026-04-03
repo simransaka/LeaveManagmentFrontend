@@ -1,0 +1,55 @@
+<app-user-navbar></app-user-navbar>
+
+<!-- Loading -->
+<div *ngIf="loading" class="loading-box">
+    Loading leave requests...
+</div>
+
+<!-- Error -->
+<div *ngIf="!loading && error" class="error-box">
+    {{ error }}
+</div>
+
+<!-- Success -->
+<div *ngIf="successMessage" class="success-box">
+    {{ successMessage }}
+</div>
+
+<!-- Form -->
+<div *ngIf="!loading && !error" class="fixed left-[550px] w-[420px] my-[80px] mx-auto bg-[#ffffff] py-[25px] px-[30px] rounded-2xl shadow-lg">
+    <h2 class="text-center mb-5 test-[#2c3e50]">Apply Leave</h2>
+
+    <form class="flex flex-col" [formGroup]="leaveRequestForm" (ngSubmit)="onSubmit(leaveRequestForm)">
+
+        <label class="form-label">Email</label>
+        <input class="form-input" type="text" formControlName="emailId" readonly>
+
+        <label class="form-label">Leave Type</label>
+        <input class="form-input" list="types" formControlName="leaveType" required>
+
+        <datalist id="types">
+            <option value="sick">
+            <option value="casual">
+            <option value="earned">
+        </datalist>
+
+        <label class="form-label">Total Days</label>
+        <input class="form-input" type="number" formControlName="totalDaysOfLeave" required>
+
+        <label class="form-label">Start Date</label>
+        <input class="form-input" type="date" formControlName="startDate" required>
+
+        <label class="form-label">End Date</label>
+        <input class="form-input" type="date" formControlName="endDate" required>
+
+        <label class="form-label">Reason</label>
+        <input class="form-input" type="text" formControlName="reason" required>
+
+        <button class="mt-5 p-3 bg-[#4a90e2] text-[white] border-none rounded-md text-[15px] cursor-pointer transition duration-300 hover:bg-[#357abd]" type="submit">Submit</button>
+
+    </form>
+</div>
+
+<div *ngIf="error" class="error-box">
+    {{ error }}
+</div>

@@ -1,0 +1,46 @@
+<app-admin-navbar></app-admin-navbar>
+
+<table class="w-[95%] mx-auto my-[30px] border-collapse bg-white rounded-xl overflow-hidden shadow-lg">
+    <thead class="bg-gradient-to-r from-[#4a90e2] to-[#357abd] text-white">
+        <th>Email ID</th>
+        <th>Leave Request ID</th>
+        <th>Leave Type</th>
+        <th>Total Days Of Leave</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Reason</th>
+        <th>Applied Date</th>
+        <th>Action</th>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let request of requests">
+            <td>{{request.emailId}}</td>
+            <td>{{request.leaveRequestId}}</td>
+            <td>{{request.leaveType}}</td>
+            <td>{{request.totalDaysOfLeave}}</td>
+            <td>{{request.startDate}}</td>
+            <td>{{request.endDate}}</td>
+            <td>{{request.reason}}</td>
+            <td>{{request.appliedDate}}</td>
+            <td>
+                <form [formGroup]="approvalForm" (ngSubmit)="onSubmit(request.leaveRequestId)">
+
+                    
+                    <!-- <input list="status" name="list"
+                             formControlName="status" placeholder="status" required class="w-[90px] px-2 py-1 border rounded-md text-xs focus:outline-none focus:ring-2 focus:ring-blue-400"> -->
+                 
+                    <!-- <datalist id="status">
+                        <option value="approved">
+                        <option value="rejected">
+                    </datalist> -->
+
+                    <button type="submit" class="px-3 py-1.5 rounded-md bg-green-500 text-white text-xs hover:bg-green-600 transition shadow-sm" (click)="onClick('approved')">Approve</button>
+                    <button type="submit" class="px-3 py-1.5 rounded-md bg-red-500 text-white text-xs hover:bg-red-600 transition shadow-sm" (click)="onClick('rejected')">Reject</button>
+
+                </form>
+            </td>
+
+        </tr>
+    </tbody>
+</table>

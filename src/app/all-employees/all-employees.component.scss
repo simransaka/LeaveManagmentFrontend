@@ -1,0 +1,23 @@
+th {
+  @apply p-3 text-center text-[13px];
+}
+
+/* Rows */
+td {
+  @apply p-3 text-center text-[#374151];
+}
+
+/* Zebra */
+tr {
+  @apply even:bg-[#f1f3f5];
+}
+
+/* Labels */
+form-label {
+  @apply text-[13px] text-[#555]
+}
+
+/* Inputs */
+.form-input {
+  @apply p-2 rounded-lg border border-[#ddd] transition duration-200 focus:outline-none border-[#4a90e2] shadow-md; 
+}

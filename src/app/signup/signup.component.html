@@ -1,0 +1,41 @@
+<nav class="bg-[#2c3e50] py-3 px-5">
+    <ul class="list-none flex justify-end gap-7 m-0 p-0">
+        <li><a (click)="goHome()">Home</a></li>
+        <li><a (click)="signUp()">SignUp</a></li>
+        <li><a (click)="logIn()">LogIn</a></li>
+    </ul>
+</nav>
+
+<div class="w-[380px] my-[50px] mx-auto p-7 flex flex-col bg-[#fff] rounded-xl shadow-[0_5px_15px_rgba(0,0,0,0.15)]">
+    <h2 class="mb-5 text-center">SIGNUP</h2>
+    
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm)">
+        <div class="flex flex-col mb-[15px]">
+            <label for="userName">Enter your name</label>
+            <input type="text" id="userName" formControlName="userName">
+        </div>
+        <div class="flex flex-col mb-[15px]">
+            <label for="emailId">Enter your emailId</label>
+            <input type="text" id="emailId" formControlName="emailId" required>
+
+        </div>
+        <div class="flex flex-col mb-[15px]">
+
+            <label for="password">Enter your password</label>
+            <input type="password" id="password" formControlName="password" required>
+
+        </div>
+        <button type="submit" class="w-full p-2.5 mt-2.5 bg-blue-500 text-white border-none rounded-md cursor-pointer hover:bg-blue-700">Submit</button>
+
+    </form>
+</div>
+
+<div class="w-[20%] my-[0px] mx-auto rounded-md bg-[#f6d3d0] text-red-600 font-medium text-center border border-[#f0c7b9]" *ngIf="error">
+    {{error}}
+</div>
+
+<!--for login -->
+<div class="text-center mt-5">
+    <h3>Already have an account?</h3>
+    <button class="mt-1 p-2 px-4 border-none bg-green-500 text-white rounded cursor-pointer hover:bg-green-700" (click)="logIn()">Log In</button>
+</div>

@@ -1,0 +1,30 @@
+<nav class="bg-[#2c3e50] py-3 px-5">
+    <ul class="list-none flex justify-end gap-7 m-0 p-0">
+        <li><a (click)="goHome()">Home</a></li>
+        <li><a (click)="signUp()">SignUp</a></li>
+        <li><a (click)="logIn()">LogIn</a></li>
+    </ul>
+</nav>
+
+<div class="w-[380px] mx-auto mt-[150px] p-6 flex flex-col bg-white rounded-xl shadow-lg">
+    <h2 class="text-center mb-5">LOGIN</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+        <div class="flex flex-col mb-[15px]">
+            <label for="emailId">Enter your emailId</label>
+            <input type="text" id="emailId" formControlName="emailId" required>
+        </div>
+        <div class="flex flex-col mb-[15px]">
+            <label for="password">Enter your password</label>
+            <input type="password" id="password" formControlName="password" required>
+        </div>
+
+        <button type="submit"
+            class="w-full p-3 bg-[#007bff] text-[white] border-none rounded-md cursor-pointer hover:bg-[#0056b3]">Submit</button>
+
+    </form>
+
+</div>
+
+<div class="w-[20%] my-[20px] mx-auto rounded-md bg-[#f6d3d0] text-red-600 font-medium text-center border border-[#f0c7b9]" *ngIf="error">
+    {{error}}
+</div>

@@ -1,0 +1,70 @@
+<app-user-navbar></app-user-navbar>
+
+<div class="text-center mt-20" *ngIf="balance">
+
+  <h2 class="mb-6 mt-4 font-bold text-[20px] text-gray-800">LEAVE BALANCE</h2>
+
+  <div class="flex justify-center gap-6 flex-wrap mt-10">
+
+    <!-- Casual Leaves Card -->
+    <div class="leave-card">
+      <h3>Casual Leaves</h3>
+
+      <div class="leave-item">
+        <span>Total</span>
+        <strong>{{balance.totalCasualLeaves}}</strong>
+      </div>
+
+      <div class="leave-item">
+        <span>Remaining</span>
+        <strong class="positive">{{balance.remainingCasualLeaves}}</strong>
+      </div>
+
+      <div class="leave-item">
+        <span>Used</span>
+        <strong class="negative">{{balance.usedCasualLeaves}}</strong>
+      </div>
+    </div>
+
+    <!-- Sick Leaves Card -->
+    <div class="leave-card">
+      <h3>Sick Leaves</h3>
+
+      <div class="leave-item">
+        <span>Total</span>
+        <strong>{{balance.totalSickLeaves}}</strong>
+      </div>
+
+      <div class="leave-item">
+        <span>Remaining</span>
+        <strong class="positive">{{balance.remainingSickLeaves}}</strong>
+      </div>
+
+      <div class="leave-item">
+        <span>Used</span>
+        <strong class="negative">{{balance.usedSickLeaves}}</strong>
+      </div>
+    </div>
+
+    <div class="leave-card">
+      <h3>Earned Leaves</h3>
+
+      <div class="leave-item">
+        <span>Total</span>
+        <strong>{{balance.totalEarnedLeaves}}</strong>
+      </div>
+
+      <div class="leave-item">
+        <span>Remaining</span>
+        <strong class="positive">{{balance.remainingEarnedLeaves}}</strong>
+      </div>
+
+      <div class="leave-item">
+        <span>Used</span>
+        <strong class="negative">{{balance.usedEarnedLeaves}}</strong>
+      </div>
+    </div>
+
+  </div>
+
+
