@@ -1,0 +1,48 @@
+<nav class="fixed top-0 left-0 bg-[#2c3e50] py-2 px-4 w-full h-[60px] flex flex-col">
+    <!--hamburger menu bar-->
+    <div *ngIf="(role === 'user' || role === 'admin') && !isHomePage">
+        <button class="hamburger flex flex-col justify-between w-6 h-5 my-1 cursor-pointer transition-all duration-300"
+            [class.active]="sideBarOpen" (click)="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+    <div>
+        <ul class="list-none flex justify-end gap-7 m-0 p-0 text-white"
+            *ngIf="(role === 'user' || role === 'admin') && !isHomePage">
+            <li><a (click)="myProfile()">My Profile</a></li>
+            <li><a (click)="goHome()">Home</a></li>
+            <li><a (click)="logOut()">Log Out</a></li>
+        </ul>
+        <ul class="list-none flex justify-end gap-7 m-0 p-0 my-4" *ngIf="!(role === 'user' || role === 'admin') && !isHomePage || isHomePage">
+            <li><a (click)="goHome()">Home</a></li>
+            <li><a (click)="signUp()">SignUp</a></li>
+            <li><a (click)="logIn()">LogIn</a></li>
+        </ul>
+    </div>
+
+</nav>
+
+<nav [class.show]="sideBarOpen" *ngIf="!isHomePage">
+    <div class="fixed top-[60px] left-0 h-[calc(100vh-60px)] w-56 bg-[#2c3e50] text-white 
+         flex flex-col py-6 shadow-xl
+         transform transition-transform duration-300 ease-in-out" [ngClass]="sideBarOpen ? 'translate-x-0' : '-translate-x-full'">
+
+        <ul *ngIf="role === 'user'"  class="flex flex-col gap-4 px-3">
+            <li><a class="sideBar" (click)="requestLeave()">Apply Leave</a></li>
+            <li><a class="sideBar" (click)="checkallLeaves()">My Leaves</a></li>
+            <li><a class="sideBar" (click)="checkLeaveBalance()">Leave Balance</a></li>
+            <li><a class="sideBar" (click)="leavePolicy()">Leave Policy</a></li>
+            <li><a class="sideBar" (click)="goToAttendance()">Attendance</a></li>
+
+        </ul>
+
+        <ul *ngIf="role === 'admin'"  class="flex flex-col gap-4 px-3">
+            <li><a class="sideBar" (click)="checkEmployees()">Manage Employees</a></li>
+            <li><a class="sideBar" (click)="checkRequests()">View Leave Requests</a></li>
+        </ul>
+
+
+    </div>
+</nav>

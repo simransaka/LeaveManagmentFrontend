@@ -1,12 +1,5 @@
-<nav class="bg-[#2c3e50] py-3 px-5">
-    <ul class="list-none flex justify-end gap-7 m-0 p-0">
-        <li><a (click)="goHome()">Home</a></li>
-        <li><a (click)="signUp()">SignUp</a></li>
-        <li><a (click)="logIn()">LogIn</a></li>
-    </ul>
-</nav>
 
-<div class="w-[380px] my-[50px] mx-auto p-7 flex flex-col bg-[#fff] rounded-xl shadow-[0_5px_15px_rgba(0,0,0,0.15)]">
+<div class="w-[380px] my-[80px] mx-auto p-7 flex flex-col bg-[#fff] rounded-xl shadow-[0_5px_15px_rgba(0,0,0,0.15)]">
     <h2 class="mb-5 text-center">SIGNUP</h2>
     
     <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm)">
@@ -30,12 +23,17 @@
     </form>
 </div>
 
-<div class="w-[20%] my-[0px] mx-auto rounded-md bg-[#f6d3d0] text-red-600 font-medium text-center border border-[#f0c7b9]" *ngIf="error">
+<div class="w-[20%] h-[4%] my-[-30px] mx-auto rounded-md bg-[#f6d3d0] text-red-600 font-medium text-center border border-[#f0c7b9]" *ngIf="error">
     {{error}}
 </div>
 
+<!-- Success -->
+<div *ngIf="successMessage" class="w-[20%] h-[4%] my-[-30px] mx-auto rounded-md bg-[#eafaf1] text-green-600 font-medium text-center border border-[#b7ebc6]">
+    {{ successMessage }}
+</div>
+
 <!--for login -->
-<div class="text-center mt-5">
+<div class="text-center mt-6">
     <h3>Already have an account?</h3>
     <button class="mt-1 p-2 px-4 border-none bg-green-500 text-white rounded cursor-pointer hover:bg-green-700" (click)="logIn()">Log In</button>
 </div>

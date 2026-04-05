@@ -3,7 +3,6 @@ import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, 
 import { DataService, LeaveRequest } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
 import { NgFor, NgIf } from '@angular/common';
-import { AdminNavbarComponent } from '../admin-navbar/admin-navbar.component';
 
 @Component({
   selector: 'app-approve-leaves',
@@ -11,7 +10,6 @@ import { AdminNavbarComponent } from '../admin-navbar/admin-navbar.component';
   imports: [FormsModule,
     ReactiveFormsModule,
     NgFor,
-    AdminNavbarComponent,
     NgIf
   ],
   templateUrl: './approve-leaves.component.html',

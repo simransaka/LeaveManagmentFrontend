@@ -18,6 +18,7 @@ import { Router } from '@angular/router';
 export class SignupComponent {
 
   error = '';
+  successMessage = '';
 
   signupForm : FormGroup = new FormGroup({
       emailId : new FormControl(),
@@ -38,7 +39,10 @@ export class SignupComponent {
       const credentials = signupForm.value;
       this.authService.signUp(credentials).subscribe({
         next : (response) => {
-          console.log("Sign Up successfull - ", response);
+          this.successMessage = "Sign Up successfull";
+          setTimeout(() => {
+            this.error = '';
+          }, 3000);
         },
         error : (error) => {
           this.error = "Email ID already exists";

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserNavbarComponent } from '../user-navbar/user-navbar.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 import { CommonModule, NgClass, NgFor } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { DataService, LeaveRequest } from '../data.service';
@@ -7,7 +7,7 @@ import { DataService, LeaveRequest } from '../data.service';
 @Component({
   selector: 'app-my-leaves',
   standalone: true,
-  imports: [UserNavbarComponent,
+  imports: [NavbarComponent,
     NgFor,
     NgClass,
     CommonModule

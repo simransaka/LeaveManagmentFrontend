@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
-import { UserNavbarComponent } from '../user-navbar/user-navbar.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -10,7 +10,7 @@ import { NgIf } from '@angular/common';
   standalone: true,
   imports: [FormsModule,
     ReactiveFormsModule,
-    UserNavbarComponent,
+    NavbarComponent,
     NgIf
   ],
   templateUrl: './leave-request.component.html',
