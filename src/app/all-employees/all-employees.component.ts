@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { DataService, Employee, Users } from '../data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { AdminNavbarComponent } from '../admin-navbar/admin-navbar.component';
 
 @Component({
   selector: 'app-all-employees',
@@ -11,7 +10,6 @@ import { AdminNavbarComponent } from '../admin-navbar/admin-navbar.component';
   imports: [NgFor,
     FormsModule,
     ReactiveFormsModule,
-    AdminNavbarComponent,
     NgIf
   ],
   templateUrl: './all-employees.component.html',

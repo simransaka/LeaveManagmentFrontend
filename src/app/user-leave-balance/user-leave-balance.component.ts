@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService, LeaveBalance } from '../data.service';
 import { NgIf } from '@angular/common';
-import { UserNavbarComponent } from '../user-navbar/user-navbar.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-user-leave-balance',
   standalone: true,
   imports: [NgIf,
-    UserNavbarComponent
+    NavbarComponent
   ],
   templateUrl: './user-leave-balance.component.html',
   styleUrl: './user-leave-balance.component.scss'
@@ -17,6 +17,7 @@ export class UserLeaveBalanceComponent implements OnInit{
   balance : LeaveBalance | null = null;
   loading = true;
   error = '';
+  sideBarOpen = false;
   
   constructor(private router: Router, private route: ActivatedRoute, private dataService: DataService) { }
 

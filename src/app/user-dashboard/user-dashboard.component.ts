@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { DataService, Users } from '../data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgIf } from '@angular/common';
-import { UserNavbarComponent } from '../user-navbar/user-navbar.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-user-dashboard',
   standalone: true,
   imports: [NgIf,
-    UserNavbarComponent
+    NavbarComponent
   ],
   templateUrl: './user-dashboard.component.html',
   styleUrl: './user-dashboard.component.scss'

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { UserNavbarComponent } from '../user-navbar/user-navbar.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-attendance',
   standalone: true,
-  imports: [UserNavbarComponent,
+  imports: [NavbarComponent,
     CommonModule
   ],
   templateUrl: './attendance.component.html',

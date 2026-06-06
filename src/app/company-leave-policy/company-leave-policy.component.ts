@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { UserNavbarComponent } from '../user-navbar/user-navbar.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-company-leave-policy',
   standalone: true,
-  imports: [UserNavbarComponent],
+  imports: [NavbarComponent],
   templateUrl: './company-leave-policy.component.html',
   styleUrl: './company-leave-policy.component.scss'
 })
